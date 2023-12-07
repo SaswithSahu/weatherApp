@@ -33,9 +33,9 @@ class App extends Component{
 
   renderDetails = () =>{
     const {whetherData} = this.state
-    console.log(whetherData.cod)
+    console.log(whetherData)
     let {weather,main,wind,sys} = whetherData
-    const temp = ((main.temp - 32)*(5/9)).toFixed(2)
+    const temp = (main.temp - 273).toFixed(0)
     const weatherDetails = weather[0]
     const date = new Date(whetherData.dt * 1000)
     const formatedDate = date.toUTCString()
@@ -47,7 +47,7 @@ class App extends Component{
           <img src = "https://cdn.jim-nielsen.com/ios/512/weather-2019-02-07.png" alt="temp" className="image"/>
           <div>
           <span className="temperature">{temp}°C</span><br/>
-          <span className="temperature">{main.temp}°F</span>
+          <span className="temperature">{(((main.temp - 273.15)*9/5)+32).toFixed(2)}°F</span>
           </div>
         </div>
          <DateAndTime date = {formatedDate}/>
