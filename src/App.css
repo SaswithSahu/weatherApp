@@ -1,6 +1,6 @@
 .Container{
   width: 1000px;
-  height: 120vh;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
